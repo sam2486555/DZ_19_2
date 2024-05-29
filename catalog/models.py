@@ -2,13 +2,13 @@ from django.db import models
 
 
 class Product(models.Model):
-    title = models.CharField(
+    name = models.CharField(
         max_length=100,
         verbose_name="Наименование продукта",
         help_text="Введите название продукта",
     )
 
-    desk = models.CharField(
+    description = models.CharField(
         max_length=100,
         verbose_name="Описание продукта",
         help_text="Введите описание продукта",
@@ -54,27 +54,27 @@ class Product(models.Model):
     )
 
     def __str__(self):
-        return self.title
+        return self.name
 
     class Meta:
         verbose_name = "Продукт"
         verbose_name_plural = "Продукты"
-        ordering = ["category", "title"]
+        ordering = ["category", "name"]
 
 
 class Category(models.Model):
-    title = models.CharField(
+    name = models.CharField(
         max_length=100,
         verbose_name="Наименование категории",
         help_text="Введите название категории",
     )
 
-    desk = models.TextField(
+    description = models.TextField(
         verbose_name="Описание категории", help_text="Введите описание категории"
     )
 
     def __str__(self):
-        return self.title
+        return self.name
 
     class Meta:
         verbose_name = "категория"
