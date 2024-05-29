@@ -53,6 +53,13 @@ class Product(models.Model):
         help_text="Введите Дату последнего изменения продукта",
     )
 
+    manufactured_at = models.DateField(
+        blank=True,
+        null=True,
+        verbose_name="Дата производства продукта",
+        help_text="Введите Дата производства продукта",
+    )
+
     def __str__(self):
         return self.title
 
