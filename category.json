@@ -1,5 +1,200 @@
 [
   {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2024-05-30T18:13:53.551Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "5",
+      "object_repr": "Сладости",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2024-05-30T18:13:53.555Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "4",
+      "object_repr": "Газированные напитки",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2024-05-30T18:13:53.556Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "3",
+      "object_repr": "Соки",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2024-05-30T18:13:53.556Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "2",
+      "object_repr": "Овощи",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2024-05-30T18:13:53.556Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "1",
+      "object_repr": "Фрукты",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2024-06-03T15:38:24.637Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "1",
+      "object_repr": "бананы",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2024-06-03T15:40:15.528Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "2",
+      "object_repr": "Апельсины",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+      "action_time": "2024-06-03T15:42:20.709Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "3",
+      "object_repr": "Томаты",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+      "action_time": "2024-06-03T15:45:00.428Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "4",
+      "object_repr": "Огурцы",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+      "action_time": "2024-06-03T15:47:44.955Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "5",
+      "object_repr": "Сок добрый (яблоко)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+      "action_time": "2024-06-03T15:49:28.551Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "6",
+      "object_repr": "Сок добрый (апельсин)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+      "action_time": "2024-06-03T15:51:32.099Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "7",
+      "object_repr": "Кока-кола 1л.",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+      "action_time": "2024-06-03T15:53:03.711Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "8",
+      "object_repr": "Спрайт 1л.",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+      "action_time": "2024-06-03T15:54:20.435Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "9",
+      "object_repr": "Баунти",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+      "action_time": "2024-06-03T15:55:38.627Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "10",
+      "object_repr": "Сникерс",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
     "model": "auth.permission",
     "pk": 1,
     "fields": {
@@ -375,6 +570,136 @@
     "fields": {
       "session_data": ".eJxVjMEOwiAQRP-FsyECsrIevfsNZOkuUjWQlPZk_HfbpAc9zrw381aRlrnEpcsUR1YXZdTht0s0PKVugB9U700Prc7TmPSm6J12fWssr-vu_h0U6mVdh5CFxTsPzCdiCxzOa2InAdgIgMMjGJ8EWDIiOk4GjU2WskkYUH2-7eM3-g:1sCItx:ho_457PzQ65IpAXt9kS-x3_NJ9ygWfV70PQ0i-DrLXQ",
       "expire_date": "2024-06-12T12:59:33.626Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "title": "бананы",
+      "desk": "Свежие, спелые бананы",
+      "image": "media/photo/banani.jpeg",
+      "category": 1,
+      "price": 130,
+      "created_at": "2024-06-03",
+      "updated_at": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "title": "Апельсины",
+      "desk": "Свежие, спелые апельсины",
+      "image": "media/photo/apels.jpg",
+      "category": 1,
+      "price": 120,
+      "created_at": "2024-06-03",
+      "updated_at": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "title": "Томаты",
+      "desk": "Свежие, полезные томаты",
+      "image": "media/photo/pomidor.jpg",
+      "category": 2,
+      "price": 110,
+      "created_at": "2024-06-03",
+      "updated_at": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "title": "Огурцы",
+      "desk": "Свежие, полезные огурцы",
+      "image": "media/photo/ogurec.jpg",
+      "category": 2,
+      "price": 100,
+      "created_at": "2024-06-03",
+      "updated_at": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "title": "Сок добрый (яблоко)",
+      "desk": "Натуральные соки Добрый",
+      "image": "media/photo/dobr_yabloko.jpg",
+      "category": 3,
+      "price": 80,
+      "created_at": "2024-06-03",
+      "updated_at": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+      "title": "Сок добрый (апельсин)",
+      "desk": "Натуральные соки Добрый",
+      "image": "media/photo/dobr_apels.jpg",
+      "category": 3,
+      "price": 80,
+      "created_at": "2024-06-03",
+      "updated_at": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+      "title": "Кока-кола 1л.",
+      "desk": "Освежающие напитки, газ. вода",
+      "image": "media/photo/kola.jpg",
+      "category": 4,
+      "price": 70,
+      "created_at": "2024-06-03",
+      "updated_at": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 8,
+    "fields": {
+      "title": "Спрайт 1л.",
+      "desk": "Освежающие напитки, газ. вода",
+      "image": "media/photo/sprite.jpg",
+      "category": 4,
+      "price": 70,
+      "created_at": "2024-06-03",
+      "updated_at": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 9,
+    "fields": {
+      "title": "Баунти",
+      "desk": "Вкусный шоколадный батончик",
+      "image": "media/photo/baunty.jpg",
+      "category": 5,
+      "price": 50,
+      "created_at": "2024-06-03",
+      "updated_at": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 10,
+    "fields": {
+      "title": "Сникерс",
+      "desk": "Вкусный шоколадный батончик с орехами",
+      "image": "media/photo/Snikers.jpg",
+      "category": 5,
+      "price": 50,
+      "created_at": "2024-06-03",
+      "updated_at": null
     }
   },
   {
