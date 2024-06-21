@@ -189,7 +189,7 @@
 
 
 <header data-bs-theme="dark">
-    {% include 'includes/inc_menu.html' %}
+    {% include 'catalog/includes/inc_menu.html' %}
 </header>
 
 <main>
@@ -200,8 +200,7 @@
                 <h1 class="fw-light">ProdBerri</h1>
                 <p class="lead text-body-secondary">ВКУСНЫЕ И СВЕЖИЕ ОВОЩИ И ФРУКТЫ <br/>ОСВЕЖАЮЩИЕ СОКИ И НАПИТКИ</p>
                 <p>
-                    <a href="#" class="btn btn-primary my-2">Main call to action</a>
-                    <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+                    <a href="{% url 'catalog:blog_list' %}" class="btn btn-primary my-2">Перейти на блог</a>
                 </p>
             </div>
         </div>
