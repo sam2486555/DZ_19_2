@@ -6,7 +6,7 @@
     <section class="py-5 text-center container">
 
         <div class="col-lg-6 col-md-8 mx-auto">
-            <a class="btn btn-primary" href="{% url 'catalog:products_list' %}" role="button">Назад</a>
+            <a class="btn btn-primary" href="{% url 'catalog:product_list' %}" role="button">Назад</a>
 
             <a class="btn btn-primary" href="{% url 'catalog:blog_create' %}" role="button">Создать</a>
         </div>
@@ -18,7 +18,7 @@
             {% for blog in object_list %}
             <div class="col">
                 <div class="card shadow-sm">
-                    <img src="{{ blog.preview | media_filter }}">
+                    <img class="card-img-top" src="{{ blog.preview | media_filter }}">
 
                     <div class="card-body">
                         <p class="card-text">{{blog.title }}</p>
