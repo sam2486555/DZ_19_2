@@ -79,3 +79,32 @@ class Category(models.Model):
     class Meta:
         verbose_name = "категория"
         verbose_name_plural = "категории"
+
+
+NULLABLE = {"blank": "True", "null": "True"}
+
+
+class Blog(models.Model):
+    title = models.CharField(
+        max_length=50,
+        verbose_name="заголовок")
+    slug = models.CharField(
+        max_length=150,
+        verbose_name="URL", **NULLABLE)
+    content = models.TextField(
+        verbose_name="содержимое", **NULLABLE)
+    preview = models.ImageField(
+        upload_to="media/photo", **NULLABLE)
+    created_at = models.DateField(
+        auto_created=True, verbose_name="дата создания")
+    published = models.BooleanField(
+        default=True, verbose_name="опубликован")
+    views = models.IntegerField(
+        default=0, verbose_name="количество просмотров")
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "блог"
+        verbose_name_plural = "блоги"
