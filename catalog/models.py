@@ -1,6 +1,9 @@
 from django.db import models
 from users.models import User
+
 NULLABLE = {"blank": "True", "null": "True"}
+
+
 class Product(models.Model):
     title = models.CharField(
         max_length=100,
@@ -58,6 +61,9 @@ class Product(models.Model):
         verbose_name='Пользователь',
         help_text='Укажите владельца продукта', **NULLABLE
     )
+
+    published = models.BooleanField(default=False, verbose_name='опубликован')
+
     def __str__(self):
         return self.title
 
@@ -65,6 +71,11 @@ class Product(models.Model):
         verbose_name = "Продукт"
         verbose_name_plural = "Продукты"
         ordering = ["category", "title"]
+        permissions = [
+            ("can_canceled_public", "может отменять публикацию продукта"),
+            ("can_edit_desk", "может менять описание продукта"),
+            ("can_edit_category", "может менять категорию продукта")
+        ]
 
 
 class Category(models.Model):
@@ -103,6 +114,10 @@ class Blog(models.Model):
         default=True, verbose_name="опубликован")
     views = models.IntegerField(
         default=0, verbose_name="количество просмотров")
+    user = models.ForeignKey(User,
+                             on_delete=models.SET_NULL, verbose_name='Пользователь',
+                             help_text='Укажите владельца продукта', **NULLABLE
+                             )
 
     def __str__(self):
         return self.title
@@ -110,6 +125,9 @@ class Blog(models.Model):
     class Meta:
         verbose_name = "блог"
         verbose_name_plural = "блоги"
+        permissions = [
+            ("can_edit", "может редактировать блог")
+        ]
 
 
 class Version(models.Model):
