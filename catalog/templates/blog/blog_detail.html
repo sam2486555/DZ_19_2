@@ -19,10 +19,12 @@
                             <div class="btn-group">
                                 <a class="btn btn-primary" href="{% url 'catalog:blog_list' %}"
                                    role="button">Назад</a>
+                                {% if perms.blog.can_edit or user ==  blog.user %}
                                 <a class="btn btn-primary" href="{% url 'catalog:blog_update' blog.pk %}"
                                    role="button">Редактировать</a>
                                 <a class="btn btn-primary" href="{% url 'catalog:blog_delete' blog.pk %}"
                                    role="button">Удалить</a>
+                                {% endif %}
 
                             </div>
                         </div>
