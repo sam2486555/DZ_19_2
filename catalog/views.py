@@ -1,10 +1,11 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.exceptions import PermissionDenied
 from django.forms import inlineformset_factory
 from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, TemplateView, CreateView, UpdateView, DeleteView
 from pytils.translit import slugify
-from catalog.forms import ProductForm, VersionForm
+from catalog.forms import ProductForm, VersionForm, ProductModeratorForm, BlogForm, BlogModeratorForm
 from catalog.models import Product, Blog, Version
 
 
@@ -61,7 +62,7 @@ class ProductCreateView(CreateView, LoginRequiredMixin):
         return super().form_valid(form)
 
 
-class ProductUpdateView(UpdateView):
+class ProductUpdateView(LoginRequiredMixin, UpdateView):
     model = Product
     form_class = ProductForm
 
@@ -90,6 +91,18 @@ class ProductUpdateView(UpdateView):
             return super().form_valid(form)
         else:
             return self.render_to_response(self.get_context_data(form=form, formset=formset))
+
+    def get_form_class(self):
+        user = self.request.user
+        if user == self.object.user:
+            return ProductForm
+        if user.has_perm(
+            "catalog.can_canceled_public") and user.has_perm(
+            "catalog.can_edit_desk") and user.has_perm(
+            "catalog.can_edit_category"):
+            return ProductModeratorForm
+
+        raise PermissionDenied
 
 
 class ProductDeleteView(DeleteView):
@@ -133,13 +146,21 @@ class BlogCreateView(CreateView):
         return super().form_valid(form)
 
 
-class BlogUpdateView(UpdateView):
+class BlogUpdateView(LoginRequiredMixin, UpdateView):
     template_name = 'blog/blog_form.html'
     model = Blog
     fields = ('title', 'slug', 'content', 'preview', 'created_at')
 
     def get_success_url(self):
         return reverse('catalog:blog_detail', args=(self.kwargs.get('pk'),))
+
+    def get_form_class(self):
+        user = self.request.user
+        if user == self.object.user:
+            return BlogForm
+        if user.has_perm("catalog.can_edit"):
+            return BlogModeratorForm
+        raise PermissionDenied
 
 
 class BlogDeleteView(DeleteView):
