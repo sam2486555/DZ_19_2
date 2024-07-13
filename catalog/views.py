@@ -105,7 +105,7 @@ class ProductUpdateView(LoginRequiredMixin, UpdateView):
         raise PermissionDenied
 
 
-class ProductDeleteView(DeleteView):
+class ProductDeleteView(LoginRequiredMixin, DeleteView):
     template_name = 'catalog/product_delete.html'
     model = Product
     success_url = reverse_lazy('catalog:product_list')
