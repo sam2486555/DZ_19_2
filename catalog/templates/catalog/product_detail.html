@@ -19,8 +19,7 @@
                             <div class="btn-group">
                                 <a class="btn btn-primary" href="{% url 'catalog:product_list' %}"
                                    role="button">Назад</a>
-                                {% if perms.catalog.can_canceled_public and perms.catalog.can_edit_desk and
-                                perms.catalog.can_edit_category or user == product.user %}
+                                {% if perms.catalog.can_canceled_public and perms.catalog.can_edit_desk and perms.catalog.can_edit_category or user == product.User %}
                                 <a class="btn btn-primary" href="{% url 'catalog:product_update' product.pk %}"
                                    role="button">Редактировать</a>
                                 <a class="btn btn-primary" href="{% url 'catalog:product_delete' product.pk %}"
