@@ -110,6 +110,28 @@ class ProductDeleteView(LoginRequiredMixin, DeleteView):
     model = Product
     success_url = reverse_lazy('catalog:product_list')
 
+    def get_object(self, queryset=None):
+        self.object = super().get_object(queryset)
+        if self.request.user == self.object.owner:
+            self.object.view_counter += 1
+            self.object.save()
+            return self.object
+        raise PermissionDenied()
+
+    # def delete_product(request, product_id):
+    #
+    #     product = get_object_or_404(Product, pk=product_id)
+    #
+    #     if request.user.has_perm('app.delete_product') or request.user == product.owner or request.user.is_superuser:
+    #
+    #         product.delete()
+    #
+    #         return redirect('products_list')
+    #
+    #     else:
+    #
+    #         raise PermissionDenied
+
 
 class BlogListview(ListView):
     template_name = 'blog/blog_list.html'
