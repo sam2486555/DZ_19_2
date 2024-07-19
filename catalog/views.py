@@ -6,7 +6,8 @@ from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, TemplateView, CreateView, UpdateView, DeleteView
 from pytils.translit import slugify
 from catalog.forms import ProductForm, VersionForm, ProductModeratorForm, BlogForm, BlogModeratorForm
-from catalog.models import Product, Blog, Version
+from catalog.models import Product, Blog, Version, Category
+from catalog.services import get_product_from_cache, get_category_from_cache
 
 
 # def home(request):
@@ -28,6 +29,9 @@ class ContactsView(TemplateView):
 
 class ProductListview(ListView):
     model = Product
+
+    def get_queryset(self):
+        return get_product_from_cache()
 
     def get_context_data(self, *args, **kwargs):
         context_data = super().get_context_data(*args, **kwargs)
@@ -118,19 +122,11 @@ class ProductDeleteView(LoginRequiredMixin, DeleteView):
             return self.object
         raise PermissionDenied()
 
-    # def delete_product(request, product_id):
-    #
-    #     product = get_object_or_404(Product, pk=product_id)
-    #
-    #     if request.user.has_perm('app.delete_product') or request.user == product.owner or request.user.is_superuser:
-    #
-    #         product.delete()
-    #
-    #         return redirect('products_list')
-    #
-    #     else:
-    #
-    #         raise PermissionDenied
+class CategoryListView(ListView):
+    model = Category
+
+    def get_queryset(self):
+        return get_category_from_cache()
 
 
 class BlogListview(ListView):
